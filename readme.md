@@ -7,7 +7,7 @@
 - **How to cite**: Szalma, J. (2025). AI Management Crash Course.
 - **Commercial support**: [Arrange a meeting](https://app.simplymeet.me/szalma)
 - **Disclaimer: Not legal advice; verify regulatory timelines with official sources.**
-- **Last updated**: 2025-12-15
+- **Version (Last updated)**: v1.0 (2025-12-16)
 
 ## Why
 In November - December of 2025 I helped a couple of my job-seeking friends to upskill in AI management.
@@ -25,37 +25,14 @@ The below are my cleaned up 'course notes' on the topics we covered.
 ## Table of Contents
 
 - [Preparation](#preparation)
-  - [Accounts](#accounts)
-  - [Bookmark these resources](#bookmark-these-resources)
-  - [IT Basics](#it-basics)
-  - [Intro videos](#intro-videos)
 - [Unit 1 - Generative AI Landscape](#unit-1---generative-ai-landscape)
-  - [Topics](#topics)
-  - [Job interview highlights](#job-interview-highlights)
 - [Unit 2 - Transformers 101](#unit-2---transformers-101)
-  - [Topics](#topics-1)
-  - [Job interview highlights](#job-interview-highlights-1)
-  - [Homework](#homework)
 - [Unit 3 - Vendors, Token Economics, and Cost Control](#unit-3---vendors-token-economics-and-cost-control)
-  - [Topics](#topics-2)
-  - [Job interview highlights](#job-interview-highlights-2)
-  - [Homework](#homework-1)
-  - [Deep Dive (optional)](#deep-dive-optional)
 - [Unit 4 - Security and Governance](#unit-4---security-and-governance)
-  - [Topics](#topics-3)
-  - [Job interview highlights](#job-interview-highlights-3)
-  - [Homework](#homework-2)
 - [Unit 5 - Compliance](#unit-5---compliance)
-  - [EU AI Act](#eu-ai-act)
-  - [GPAI and "systemic risk" - thresholds and why it matters](#gpai-and-systemic-risk--thresholds-and-why-it-matters)
-  - [Why GDPR matters for AI](#why-gdpr-matters-for-ai)
-  - [Why NIS2 matters for AI](#why-nis2-matters-for-ai)
 - [Unit 6 - Integration Patterns](#unit-6---integration-patterns)
-  - [Topics](#topics-4)
-  - [Focus points](#focus-points)
-  - [Job interview highlights](#job-interview-highlights-4)
 - [Out of Scope](#out-of-scope)
-
+- [Glossary](#glossary)
 
 
 ## Preparation
@@ -174,7 +151,6 @@ The below are my cleaned up 'course notes' on the topics we covered.
 
 - AI outcomes are **probabilistic**, repeatability is a challenge, especially important for backend enterprise use cases.
 - Many AI projects behave like **R&D**, and forcing them into Agile can create friction (but most orgs try anyway).
-
 
 ---
 
@@ -465,7 +441,7 @@ In addition, the Commission can **designate** a model as systemic-risk based on 
 
 See: https://artificialintelligenceact.eu/high-level-summary/
 
-#### Ballpark **total** training compute (third-party estimates)
+#### Ballpark **total** training compute of already obsolete models (third-party estimates)
 - GPT-4 ≈ 2.1×10^25 FLOP  
 - Llama 3.1-405B ≈ 3.8×10^25 FLOP  
 
@@ -497,21 +473,13 @@ Even if you are just a deployer, whether a supplier’s model falls into the **s
 
 ## Unit 6 - Integration Patterns
 
-This unit is about **how LLM capabilities actually get embedded into enterprise systems** in ways that are operationally sane:
-- clear boundaries and ownership,
-- measurable quality,
-- controllable risk and cost,
-- and an integration shape that doesn’t collapse the moment the model changes.
-
----
-
 ### Topics
 
 #### 1) Common enterprise integration patterns
 
 ##### A) Services via an API ("intelligence as a service")
 
-**Pattern:** Expose AI capability through a managed service/API that downstream apps call, rather than embedding LLM calls everywhere.
+**Pattern:** Expose an AI capability through a managed service/API that downstream apps call, rather than embedding LLM calls everywhere.
 
 **Where it fits:**
 - summarization, classification, extraction, translation, AI-based OCR (arguably, recommender and search systems based on neural networks also belong here)
@@ -620,10 +588,10 @@ Continuous evaluation is not optional because:
 - vendors reroute/quantize/retire models.
 
 Minimum viable eval stack:
-- **offline evals**: a small "golden set" (realistic examples + edge cases)
+- **offline evals**: a small "golden set" (realistic examples + edge cases) 
 - **online monitoring**: cost, latency, error rate, tool-call failures, refusal rates
 - **quality sampling**: periodic human review of outputs and tool actions
-- **regression gates**: block prompt/model changes that break thresholds
+- **regression gates**: block prompt/model changes that break thresholds (small prompt changes can re-surface 'already solved' errors!)
 
 Common metrics (pick what matches the task):
 - structured extraction accuracy
