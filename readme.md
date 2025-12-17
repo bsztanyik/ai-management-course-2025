@@ -660,15 +660,30 @@ I intentionally did **not** go deep on:
 
 ## Glossary
 
+- **ABAC (Attribute-Based Access Control)**: Access control strategy based on attributes (user, resource, environment) rather than just roles. Allows fine-grained, dynamic permissions (e.g., "User in Dept X can view Document Y if time is 9-5").
+
 - **Agent / Agentic orchestration**: An LLM-driven system that can plan multi-step work and call tools (e.g., APIs) to achieve a goal. Powerful, but riskier because mistakes can become **actions**, not just wrong text.
 
 - **ANN (Approximate Nearest Neighbor) search**: Fast “good enough” similarity search used by vector databases to retrieve the closest embedding vectors without scanning everything.
+
+- **AuthN (Authentication) / AuthZ (Authorization)**:
+  - **AuthN**: Verifying *who* you are (login, MFA).
+  - **AuthZ**: Verifying *what* you can do (permissions, scopes).
+  Often confused but distinct concepts in security boundaries.
+
+- **BPM (Business Process Management) / RPA (Robotic Process Automation)**: Systems for automating business workflows. BPM handles end-to-end processes, while RPA automates specific repetitive tasks (like clicking buttons or moving files).
+
+- **CI/CD (Continuous Integration / Continuous Deployment)**: The modern software engineering practice of automating the testing and deployment of code changes.
 
 - **Context window**: The maximum amount of text (tokens) a model can consider at once (prompt + retrieved context + conversation + tool outputs). If key info doesn’t fit, the model can’t "see" it.
 
 - **Context engineering**: The discipline of deciding **what** goes into the context window, **when**, and **why** (retrieve, trim, summarize, structure, and version prompts/context to balance quality, cost, and risk).
 
+- **DAG (Directed Acyclic Graph)**: A workflow where steps flow in one direction (no loops). Used to ensure processes like data pipelines or document processing have a clear start and end.
+
 - **DPIA (Data Protection Impact Assessment)**: A GDPR process to assess and reduce privacy risks when processing personal data in higher-risk scenarios.
+
+- **DTO (Data Transfer Object)**: A structured "container" used to send data between systems (e.g., ensuring an API receives exactly the fields it expects).
 
 - **Embeddings**: Numeric vector representations of text (or other data) where "similar meaning" tends to be closer in vector space. Used for retrieval (RAG), clustering, and semantic search.
 
@@ -692,7 +707,11 @@ I intentionally did **not** go deep on:
 
 - **LLMOps**: Operational practices for running LLM-based systems in production (observability, evaluation, prompt/model versioning, incident response, cost controls, and change management).
 
+- **MCP (Model Context Protocol)**: An emerging open standard that helps AI agents connect to data and tools (like reading files or querying databases) in a standardized way.
+
 - **MoE (Mixture of Experts)**: A model architecture where multiple specialized sub-networks ("experts") exist and a gating mechanism selects which experts to use. Can reduce inference cost/latency, may add complexity and variability.
+
+- **NIS2 (Network and Information Security Directive 2)**: A major EU cybersecurity directive (alongside GDPR) requiring "essential" and "important" entities to implement rigorous security and incident reporting.
 
 - **Open-source vs open-weight**:
   - **Open-source**: Inference code, training pipeline and training data is available under an OSI-approved license.
@@ -704,7 +723,13 @@ I intentionally did **not** go deep on:
 
 - **RAG (Retrieval-Augmented Generation)**: A pattern where the system retrieves relevant documents/snippets and injects them into the prompt so the model can answer grounded in provided context.
 
+- **RBAC (Role-Based Access Control)**: Access control based on user roles (Admin, Editor, Viewer). Simpler to manage than ABAC but less flexible.
+
 - **Redaction**: Removing or masking sensitive information (e.g., PII, secrets) before it enters logs, prompts, or model context.
+
+- **RLHF (Reinforcement Learning from Human Feedback)**: A training method where human raters rank model outputs to teach the AI preferences (e.g., "be helpful," "don't be toxic"). Crucial for making raw models usable as chatbots.
+
+- **SLA (Service Level Agreement)**: A commitment between a provider and a customer (e.g., "99.9% uptime"). In AI, guarantees for latency (time-to-first-token) are often harder to obtain than in traditional software.
 
 - **Tokens**: The units models read/generate (chunks of text). Cost, latency, and context limits are typically measured in tokens, not characters or words.
 
