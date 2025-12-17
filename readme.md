@@ -21,6 +21,7 @@ The below are my cleaned up 'course notes' on the topics we covered.
 - We discussed these topics in 5 evenings (hence the 'crash' part of the title), but I recommend spending significantly more study time on these topics.
 - I included 'Transformers 101' to be able to discuss how the information flows inside an LLM and to be able to anchor the failure modes to the architectural and training choices, however prefaced the unit with the disclaimer that knowing the guts of transformers is not mandatory for our purposes.
 - Treat the below as an outline of the topics to research and understand.
+- If you use these notes in your own company docs, blogs, or training, please link back to this repository.
 
 ---
 
