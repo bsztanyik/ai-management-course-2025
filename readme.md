@@ -1,5 +1,7 @@
 # AI Management Crash Course
 
+![Cover Image](images/cover_img.png)
+
 - **Author**: [Jozsef Szalma](https://www.linkedin.com/in/szalma/)
 - **License**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - **Audience**: job-seeking IT professionals (non-developer backgrounds)
