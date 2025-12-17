@@ -1,4 +1,4 @@
-# AI Management Crash Course
+# AI Management Course
 
 ![Cover Image](images/cover_img.png)
 
@@ -6,7 +6,7 @@
 - **License**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - **Audience**: job-seeking IT professionals (non-developer backgrounds)
 - **Scope**: architecture, procurement, risks, governance, compliance, integration patterns
-- **How to cite**: Szalma, J. (2025). _AI Management Crash Course._ Retrieved from https://github.com/jozsefszalma/ai-management-course-2025
+- **How to cite**: Szalma, J. (2025). _AI Management Course._ Retrieved from https://github.com/jozsefszalma/ai-management-course-2025
 - **Commercial support**: [Arrange a meeting](https://app.simplymeet.me/szalma)
 - **Disclaimer: Not legal advice; verify regulatory timelines with official sources.**
 - **Version (Last updated)**: v1.0 (2025-12-16)
@@ -18,7 +18,7 @@ Most of the people involved were IT professionals with non-developer backgrounds
 The below are my cleaned up 'course notes' on the topics we covered.
 
 ## How to Use
-- We discussed these topics in 5 evenings (hence the 'crash' part of the title), but I recommend spending significantly more study time on these topics.
+- We discussed these topics in 5 evenings, but I recommend spending significantly more study time on these topics.
 - I included 'Transformers 101' to be able to discuss how the information flows inside an LLM and to be able to anchor the failure modes to the architectural and training choices, however prefaced the unit with the disclaimer that knowing the guts of transformers is not mandatory for our purposes.
 - Treat the below as an outline of the topics to research and understand.
 - If you use these notes in your own company docs, blogs, or training, please link back to this repository.
@@ -110,7 +110,7 @@ The below are my cleaned up 'course notes' on the topics we covered.
   - limited context window
   - hallucinations / "confidently wrong answers"
   - limited interpretability
-  - multimodal direction (but with enterprise constraints)
+  - multimodal direction
 - Critiques and realistic expectations
   - Yann LeCun's critique: https://youtu.be/yUmDRxV0krg?t=1101
   - Ethan Mollick's "Jagged Frontier": https://youtu.be/dPJ6Bxsky0s?t=851
@@ -177,7 +177,7 @@ The below are my cleaned up 'course notes' on the topics we covered.
   - pretraining, fine-tuning, reinforcement learning (RLHF)
   - data poisoning as a risk
   - how training incentives contribute to hallucinations
-  - "context rot" and needle-in-a-haystack effects
+  - "context rot" and needle-in-a-haystack
 - Prompting vs context engineering
 - Prompt hierarchy (system vs developer vs user vs tool context)
 - Context-driven bias / priming / roleplay
@@ -636,7 +636,7 @@ If risk is unclear, start with:
 
 ## Out of Scope 
 
-This program focused on **architecture, risks, governance, and integration patterns** for **non-developers**.   
+This program focused on **architecture, procurement, risks, governance, compliance and integration patterns** for **non-developers**.   
 I intentionally did **not** go deep on:
 
 - **Hands-on development work**
