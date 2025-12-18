@@ -144,7 +144,7 @@ The below are my cleaned up 'course notes' on the topics we covered.
 
 #### 2) Workarounds (and their caveats)
 
-- **RAG** reduces hallucination by injecting relevant context, but "relevance" is hard in insufficiently structured enterprises.
+- **RAG** reduces hallucination by injecting relevant context, but "relevance" is hard in unstructured corpora.
 - **Embeddings + vector DBs + ANN search** are common, but similarity ≠ relevance; cutoff thresholds are tricky.
 - **Graph-RAG / agentic RAG** is a likely future direction: an agent walks a knowledge graph / document graph to select context more intelligently.
 - **Context engineering** is the umbrella term for managing what goes into the context window, when, and why.
@@ -316,7 +316,7 @@ Threats, risks, and mitigations:
 | Jailbreaks | Zero trust; least privilege |
 | Data exfiltration / PII leakage | minimize and anonymize PII, constrain tools, add approvals, log everything, and assume exfil is possible |
 | Tool abuse | Zero trust; least privilege; logging and monitoring |
-| Design anti-patterns (no access controls, no least privilege, open attack vectors + sensitive data access, exposed MCP) | Education, seucrity awareness; Standardized, governed deployment pipelines; Enforcement of zero trust principles for deployment (plus proper access controls and least-privileged scopes); Security testing |
+| Design anti-patterns (no access controls, no least privilege, open attack vectors + sensitive data access, exposed MCP) | Education, security awareness; Standardized, governed deployment pipelines; Enforcement of zero trust principles for deployment (plus proper access controls and least-privileged scopes); Security testing |
 | Bias (training data skews: Reddit/4chan/academia, etc.) | Evals, evals, and more evals (and accept residual risk) |
 | Reputation risks | Challenge the need for customer-facing chatbots; avoid if not necessary |
 | Emerging threats (AI whistleblowers, data poisoning and sleeper agents) | Zero trust; least privilege; treat agents like employees you have no recourse to |
