@@ -7,6 +7,7 @@
 - **Audience**: job-seeking IT professionals (non-developer backgrounds)
 - **Scope**: architecture, procurement, risks, governance, compliance, integration patterns
 - **How to cite**: Szalma, J. (2025). _AI Management Course._ Retrieved from https://github.com/jozsefszalma/ai-management-course-2025
+- **How to contribute**: Submit a pull request or open an issue on GitHub.
 - **Commercial support**: [Arrange a meeting](https://app.simplymeet.me/szalma)
 - **Disclaimer: Not legal advice; verify regulatory timelines with official sources.**
 - **Version (Last updated)**: v1.0 (2025-12-16)
@@ -18,10 +19,11 @@ Most of the people involved were IT professionals with non-developer backgrounds
 The below are my cleaned up 'course notes' on the topics we covered.
 
 ## How to Use
-- We discussed these topics in 5 evenings, but I recommend spending significantly more study time on these topics.
-- I included 'Transformers 101' to be able to discuss how the information flows inside an LLM and to be able to anchor the failure modes to the architectural and training choices, however prefaced the unit with the disclaimer that knowing the guts of transformers is not mandatory for our purposes.
+- We discussed these topics in 5 evenings, but I recommend spending significantly more study time on this course.
+- I included 'Transformers 101' to be able to discuss how the information flows inside an LLM and to be able to anchor the failure modes to the architectural and training choices, however I prefaced the unit with the disclaimer that knowing the guts of transformers is not mandatory for our purposes.
 - Treat the below as an outline of the topics to research and understand.
-- If you use these notes in your own company docs, blogs, or training, please link back to this repository.
+- In each unit I included a list of **job interview highlights**; let me know if you found them useful!
+- If you use these notes in your own publications, company docs, blogs, or training, please link back to this repository.
 
 ---
 
@@ -183,7 +185,7 @@ The below are my cleaned up 'course notes' on the topics we covered.
 - Context-driven bias / priming / roleplay
 - Mixture of Experts (MoE)
   - consist of several specialized "expert" sub-networks
-  - a gating network which experts are needed for a specific token
+  - a gating network that decides which experts are needed for a specific token
   - improves inference speed and reduces cost
 
 ### Job interview highlights 
@@ -285,7 +287,7 @@ The below are my cleaned up 'course notes' on the topics we covered.
 
 ### Homework
 
-- Vendor/platform comparisons (keep in mind: this is a marketing material, but useful to gain an overview): https://xenoss.io/blog/openai-vs-anthropic-vs-google-gemini-enterprise-llm-platform-guide
+- Vendor/platform comparisons (keep in mind: this is marketing material, but useful to gain an overview): https://xenoss.io/blog/openai-vs-anthropic-vs-google-gemini-enterprise-llm-platform-guide
 - Pricing comparisons: https://www.llm-prices.com/
 - Open-source vs open-weight: https://opensource.org/ai/open-weights
 - Azure provisioned throughput (example of reserved capacity): https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/provisioned-throughput
@@ -313,9 +315,9 @@ Threats, risks, and mitigations:
 | Supply chain attacks (e.g. Python libs, pickle files) | Monitor your dependencies, use as reliable libraries and repositories as possible; mandate **safetensors** instead of relying on PyTorch defaults |
 | Licensing issues | MIT and Apache are generally fine, however (!) some open weight models use modified MIT / Apache license with e.g., revenue limits. Otherwise require review |
 | Prompt injections (data → "executable instructions" parallels) | Input and output validation is challenging; first ask: do you really need external/untrusted input in the context. Use at least basic hygiene to sanitize inputs and validate outputs (e.g. Amazon Bedrock Guardrails, Azure AI Content Safety)  |
-| Jailbreaks | Zero trust; least privilege |
+| Jailbreaks | Defense-in-depth; treat model output as untrusted |
 | Data exfiltration / PII leakage | minimize and anonymize PII, constrain tools, add approvals, log everything, and assume exfil is possible |
-| Tool abuse | Zero trust; least privilege; logging and monitoring |
+| Tool abuse | Least privilege; strict user-like scopes; treat agents as untrusted users |
 | Design anti-patterns (no access controls, no least privilege, open attack vectors + sensitive data access, exposed MCP) | Education, security awareness; Standardized, governed deployment pipelines; Enforcement of zero trust principles for deployment (plus proper access controls and least-privileged scopes); Security testing |
 | Bias (training data skews: Reddit/4chan/academia, etc.) | Evals, evals, and more evals (and accept residual risk) |
 | Reputation risks | Challenge the need for customer-facing chatbots; avoid if not necessary |
