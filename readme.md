@@ -314,9 +314,9 @@ Threats, risks, and mitigations:
 | Supply chain attacks (Python libs, pickle files) | Use trusted libraries; mandate **safetensors** instead of relying on PyTorch defaults |
 | Licensing issues | MIT and Apache are generally fine, however (!) some open weight models use modified MIT / Apache license with e.g., revenue limits. Otherwise require review |
 | Prompt injections (data → "executable instructions" parallels) | Input validation is problematic; first ask: do you really need external/untrusted input in the context |
-| Jailbreaks | Zero trust; least privilege |
+| Jailbreaks | Defense-in-depth; treat model output as untrusted |
 | Data exfiltration / PII leakage | minimize and anonymize PII, constrain tools, add approvals, log everything, and assume exfil is possible |
-| Tool abuse | Zero trust; least privilege |
+| Tool abuse | Least privilege; strict user-like scopes; treat agents as untrusted users |
 | Design anti-patterns (no access controls, no least privilege, open attack vectors + sensitive data access, exposed MCP) | Zero trust (plus proper access controls and least-privileged scopes) |
 | Bias (training data skews: Reddit/4chan/academia, etc.) | Evals, evals, and more evals (and accept residual risk) |
 | Reputation risks | Challenge the need for customer-facing chatbots; avoid if not necessary |
